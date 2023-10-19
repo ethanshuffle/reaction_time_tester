@@ -3,18 +3,18 @@ def scoreboard_menu_print():
   print("1. Classic Mode")
   print("2. Random Mode")
   print("3. Blind Mode")
-  print("4. Return to Main Menu")
   print("")
 
 def scoboard_menu_input():
-  choice = input("Select a menu option: ")
+  choice = input("Select a menu option or press enter to go back: ")
   if (choice == "1"):
     get_scoreboard("classic")
   elif (choice == "2"):
     get_scoreboard("random")
   elif (choice == "3"):
     get_scoreboard("blind")
-  elif (choice == "4"):
+  elif (choice == ""):
+    from boot_up import clear_console
     from boot_up import menu_sequence
     menu_sequence()
   else:

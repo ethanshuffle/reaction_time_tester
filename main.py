@@ -1,4 +1,4 @@
-from boot_up import menu_sequence
+from boot_up import boot_up
 
-menu_sequence()
+boot_up()
 

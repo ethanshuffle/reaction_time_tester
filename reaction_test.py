@@ -11,18 +11,17 @@ def game_mode_print():
   print("  Press the enter key at the number provided")
   print("3. Blind")
   print("  No timer, all reflexes. Press enter at 10 seconds")
-  print("4. Return to Main Menu")
   print("")
 
 def game_mode_select():
-  choice = input("Select a menu option: ")
+  choice = input("Select a menu option or press enter to go back: ")
   if (choice == "1"):
     classic_mode()
   elif (choice == "2"):
     random_mode()
   elif (choice == "3"):
     blind_mode()
-  elif (choice == "4"):
+  elif (choice == ""):
     from boot_up import menu_sequence
     menu_sequence()
   else:
@@ -82,7 +81,6 @@ def end_round(score, game_mode):
     print("Invalid choice; try again")
     end_round(score, game_mode)
     
-
 def calculate_score(goal, time):
   score = goal - time
   
