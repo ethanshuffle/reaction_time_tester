@@ -69,13 +69,13 @@ def calculate_score(goal, time):
 
 def classic_mode():
   print("\033c", end='')
-  print("Blind mode selected")
+  print("Classic mode selected")
   print("")
   print("Press the enter key at 10 seconds")
   start_countdown()
   time = stopwatch()
   print("You stopped the timer at ", time)
-  print("You were within ", 10 - time, " seconds!")
+  print("You were within ", "%.2f" % calculate_score(10, time), " seconds!")
   end_round(calculate_score(10, time), "classic")
 
 def random_mode():
@@ -87,5 +87,5 @@ def random_mode():
   start_countdown()
   time = stopwatch()
   print("You stopped the timer at ", time)
-  print("You were within ", calculate_score(goal, time), " seconds!")
-  end_round(calculate_score(goal, time), "blind")
+  print("You were within ", "%.2f" % calculate_score(goal, time), " seconds!")
+  end_round(calculate_score(goal, time), "random")

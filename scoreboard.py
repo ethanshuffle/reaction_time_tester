@@ -1,6 +1,7 @@
 #Prints menu option
 def scoreboard_menu_print():
   print("Scoreboards:")
+  print("")
   print("1. Classic Mode")
   print("2. Random Mode")
   print("")
@@ -45,7 +46,7 @@ def print_scoreboard(scores, game_mode):
   print("")
   for i in range(10):
     split = scores[i].split(":")
-    print(split[0].upper() + " : " + split[1])
+    print(split[0].upper() + " : " + "%.2f" % float(split[1]))
 
 #Allows user to return to main menu
 def scoreboard_exit():
@@ -81,8 +82,11 @@ def write_score_input(score, game_mode):
         continue
       else:
         scores.insert(i, insert)
-        file = open(game_mode + "_board.txt", "w")
+        file = open(game_mode + "_board.txt", "r+")
+        data = file.read()
+        file.seek(0)
         file.writelines(scores)
+        file.truncate()
         file.close()
         break
 
