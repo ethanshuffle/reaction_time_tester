@@ -48,12 +48,23 @@ def end_round(score, game_mode):
   choice = input("Save score? (y/n): ")
   if (choice == "y"):
     write_score_input(score, game_mode)
-    menu_sequence()
+    play_again(game_mode)
   elif (choice == "n"):
-    menu_sequence()
+    play_again(game_mode)
   else:
     print("Invalid choice; try again")
     end_round(score, game_mode)
+
+#Asks if user would like to play again
+def play_again(game_mode):
+  from boot_up import menu_sequence
+  new_round = input("Play again?(y/n): ")
+  if (new_round == "y" and game_mode == "classic"):
+    classic_mode()
+  elif (new_round == "y" and game_mode == "random"):
+    random_mode()
+  else:
+    menu_sequence()
 
 #Sees how close you are to the goal time
 def calculate_score(goal, time):
