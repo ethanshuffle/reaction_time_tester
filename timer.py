@@ -29,4 +29,3 @@ def visible_stopwatch(value):
       time.sleep(0.01)
       print("\033c", end='')
     break
-

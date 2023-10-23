@@ -89,4 +89,3 @@ def write_score_input(score, game_mode):
         file.truncate()
         file.close()
         break
-

@@ -165,4 +165,3 @@ def exit_animation(secs):
   print("            / \\")
   print("           BYE!!!")
   time.sleep(0.15)
-
